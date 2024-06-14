@@ -38,14 +38,16 @@ namespace DotNet8.EFCoreTransactionSample.Api.Controllers
                 await _appDbContext.TblOrders.AddAsync(orderModel);
                 int orderResult = await _appDbContext.SaveChangesAsync();
 
-                var orderDetailModel = requestModel.OrderDetails.Select(x => new TblOrderDetail()
-                {
-                    OrderDetailId = Guid.NewGuid().ToString(),
-                    OrderId = orderModel.OrderId,
-                    PricePerItem = x.PricePerItem,
-                    ProductCode = x.ProductCode,
-                    Quantity = x.Quantity,
-                }).ToList();
+                var orderDetailModel = requestModel
+                    .OrderDetails.Select(x => new TblOrderDetail()
+                    {
+                        OrderDetailId = Guid.NewGuid().ToString(),
+                        OrderId = orderModel.OrderId,
+                        PricePerItem = x.PricePerItem,
+                        ProductCode = x.ProductCode,
+                        Quantity = x.Quantity,
+                    })
+                    .ToList();
 
                 await _appDbContext.TblOrderDetails.AddRangeAsync(orderDetailModel);
                 int result = await _appDbContext.SaveChangesAsync();
