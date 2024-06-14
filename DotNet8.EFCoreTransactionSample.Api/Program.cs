@@ -1,4 +1,3 @@
-using System;
 using DotNet8.EFCoreTransactionSample.DbService.Models;
 using Microsoft.EntityFrameworkCore;
 
