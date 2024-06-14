@@ -2,9 +2,7 @@
 using DotNet8.EFCoreTransactionSample.DbService.Models;
 using DotNet8.EFCoreTransactionSample.Mapper;
 using DotNet8.EFCoreTransactionSample.Models.Setup.Order;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing.Constraints;
 
 namespace DotNet8.EFCoreTransactionSample.Api.Controllers
 {
